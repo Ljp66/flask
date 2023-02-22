@@ -1,6 +1,5 @@
 FROM python:3.11.2-alpine
 
-COPY instance /app/instance
 COPY static /app/static
 COPY templates /app/templates
 COPY app.py /app/
