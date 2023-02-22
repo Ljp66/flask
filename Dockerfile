@@ -1,16 +1,9 @@
 FROM python:3.11.2-alpine
 
-COPY static /app/static
-COPY templates /app/templates
-COPY app.py /app/
-COPY LICENSE /app/
-COPY README.md /app/
-COPY requirements.txt /app/
+COPY . /app/
 
 WORKDIR /app
 
-RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 CMD ["python3", "app.py"]
